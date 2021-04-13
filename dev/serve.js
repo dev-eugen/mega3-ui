@@ -9,18 +9,20 @@ const app = createApp(Dev)
 
 
 app.directive('click-outside', {
-    beforeMount(el, binding, vnode) {
-        el.clickOutsideEvent = function(event) {
-          if (!(el === event.target || el.contains(event.target))) {
-            binding.value(event, el);
-          }
-        };
-        document.body.addEventListener('click', el.clickOutsideEvent);
-      },
-      unmounted(el) {
-        document.body.removeEventListener('click', el.clickOutsideEvent);
+  beforeMount: (el, binding) => {
+    el.clickOutsideEvent = event => {
+      // here I check that click was outside the el and his children
+      if (!(el == event.target || el.contains(event.target))) {
+        // and if it did, call method provided in attribute value
+        binding.value();
       }
-  })
+    };
+    document.addEventListener("click", el.clickOutsideEvent);
+  },
+  unmounted: el => {
+    document.removeEventListener("click", el.clickOutsideEvent);
+  },
+})
 
 app.use(Mega3Ui)
 Object.entries(icons).forEach(([componentName, component]) => {

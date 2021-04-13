@@ -171,7 +171,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       return _ctx.visibleTrue && _ctx.visibleTrue.apply(_ctx, arguments);
     }),
     type: "button",
-    class: "bg-gray-100 rounded-full flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-light",
+    class: "bg-white rounded-full flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-light",
     id: "options-menu",
     "aria-expanded": "true",
     "aria-haspopup": "true"

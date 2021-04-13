@@ -37,7 +37,7 @@ export default /*#__PURE__*/ defineComponent({
     <!-- Heroicon name: solid/chevron-down -->
     <ChevronDownIcon class="h-5 w-5 text-white -mr-1 ml-2"/>
   </button>
-  <button @click="visibleTrue" v-click-outside="visibleFalse" v-else type="button" class="bg-gray-100 rounded-full flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-light" id="options-menu" aria-expanded="true" aria-haspopup="true">
+  <button @click="visibleTrue" v-click-outside="visibleFalse" v-else type="button" class="bg-white rounded-full flex items-center text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-light" id="options-menu" aria-expanded="true" aria-haspopup="true">
       <dots-vertical-icon class="h-5 w-5" ></dots-vertical-icon>
     </button>
 
