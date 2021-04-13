@@ -14,10 +14,18 @@ export default defineComponent({
 
 <template>
   <div id="app" class="p-3 flex justify-center bg-gray-200 w-full h-screen">
-    <m-drop-down title="Options">
-      <m-drop-down-item>Account Settings</m-drop-down-item>
+    <m-drop-down small title="Options">
+      <m-drop-down-item icon="CogIcon">Account Settings</m-drop-down-item>
       <m-drop-down-item>Options</m-drop-down-item>
       <m-drop-down-item>Logout</m-drop-down-item>
     </m-drop-down>
+  <div id="67">
+    <m-drop-down title="Options">
+      <m-drop-down-item icon="CogIcon">Account Settings</m-drop-down-item>
+      <m-drop-down-item>Options</m-drop-down-item>
+      <m-drop-down-item>Logout</m-drop-down-item>
+    </m-drop-down>
+  </div>
+    
   </div>
 </template>

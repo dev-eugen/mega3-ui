@@ -1,7 +1,7 @@
 {
-  "name": "mega3-ui",
+  "name": "mega3ui",
   "version": "1.0.0",
-  "description": "",
+  "description": "mega3-ui package",
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
@@ -23,7 +23,8 @@
     "autoprefixer": "^9",
     "core-js": "^3.10.1",
     "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "vue-click-outside": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
