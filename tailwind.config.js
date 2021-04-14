@@ -1,7 +1,9 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
+  purge: {
+    content: ['./public/**/*.html', './src/**/*.vue']
+  },
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -200,7 +202,9 @@ module.exports = {
       '2xl': '0 25px 25px rgba(0, 0, 0, 0.15)',
       none: '0 0 #0000',
     },
-    fill: { current: 'currentColor' },
+    fill: {
+      current: 'currentColor'
+    },
     grayscale: {
       0: '0',
       DEFAULT: '100%',
@@ -266,19 +270,45 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: ['0.75rem', { lineHeight: '1rem' }],
-      sm: ['0.875rem', { lineHeight: '1.25rem' }],
-      base: ['1rem', { lineHeight: '1.5rem' }],
-      lg: ['1.125rem', { lineHeight: '1.75rem' }],
-      xl: ['1.25rem', { lineHeight: '1.75rem' }],
-      '2xl': ['1.5rem', { lineHeight: '2rem' }],
-      '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-      '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-      '5xl': ['3rem', { lineHeight: '1' }],
-      '6xl': ['3.75rem', { lineHeight: '1' }],
-      '7xl': ['4.5rem', { lineHeight: '1' }],
-      '8xl': ['6rem', { lineHeight: '1' }],
-      '9xl': ['8rem', { lineHeight: '1' }],
+      xs: ['0.75rem', {
+        lineHeight: '1rem'
+      }],
+      sm: ['0.875rem', {
+        lineHeight: '1.25rem'
+      }],
+      base: ['1rem', {
+        lineHeight: '1.5rem'
+      }],
+      lg: ['1.125rem', {
+        lineHeight: '1.75rem'
+      }],
+      xl: ['1.25rem', {
+        lineHeight: '1.75rem'
+      }],
+      '2xl': ['1.5rem', {
+        lineHeight: '2rem'
+      }],
+      '3xl': ['1.875rem', {
+        lineHeight: '2.25rem'
+      }],
+      '4xl': ['2.25rem', {
+        lineHeight: '2.5rem'
+      }],
+      '5xl': ['3rem', {
+        lineHeight: '1'
+      }],
+      '6xl': ['3.75rem', {
+        lineHeight: '1'
+      }],
+      '7xl': ['4.5rem', {
+        lineHeight: '1'
+      }],
+      '8xl': ['6rem', {
+        lineHeight: '1'
+      }],
+      '9xl': ['8rem', {
+        lineHeight: '1'
+      }],
     },
     fontWeight: {
       thin: '100',
@@ -428,7 +458,9 @@ module.exports = {
       full: '100%',
       screen: '100vh',
     }),
-    inset: (theme, { negative }) => ({
+    inset: (theme, {
+      negative
+    }) => ({
       auto: 'auto',
       ...theme('spacing'),
       ...negative(theme('spacing')),
@@ -504,7 +536,9 @@ module.exports = {
       disc: 'disc',
       decimal: 'decimal',
     },
-    margin: (theme, { negative }) => ({
+    margin: (theme, {
+      negative
+    }) => ({
       auto: 'auto',
       ...theme('spacing'),
       ...negative(theme('spacing')),
@@ -514,7 +548,9 @@ module.exports = {
       full: '100%',
       screen: '100vh',
     }),
-    maxWidth: (theme, { breakpoints }) => ({
+    maxWidth: (theme, {
+      breakpoints
+    }) => ({
       none: 'none',
       0: '0rem',
       xs: '20rem',
@@ -677,7 +713,9 @@ module.exports = {
       6: '6deg',
       12: '12deg',
     },
-    space: (theme, { negative }) => ({
+    space: (theme, {
+      negative
+    }) => ({
       ...theme('spacing'),
       ...negative(theme('spacing')),
     }),
@@ -726,8 +764,7 @@ module.exports = {
     transitionProperty: {
       none: 'none',
       all: 'all',
-      DEFAULT:
-        'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
+      DEFAULT: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
       colors: 'background-color, border-color, color, fill, stroke',
       opacity: 'opacity',
       shadow: 'box-shadow',
@@ -740,7 +777,9 @@ module.exports = {
       out: 'cubic-bezier(0, 0, 0.2, 1)',
       'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
     },
-    translate: (theme, { negative }) => ({
+    translate: (theme, {
+      negative
+    }) => ({
       ...theme('spacing'),
       ...negative(theme('spacing')),
       '1/2': '50%',
@@ -962,5 +1001,7 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }
