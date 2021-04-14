@@ -3,7 +3,7 @@ import Dev from './serve.vue';
 import "../src/assets/tailwind.css"
 import Mega3Ui from '@/entry.esm';
 import * as icons from '@heroicons/vue/solid'
-
+import tailwindUI from '@headlessui/vue'
 
 const app = createApp(Dev)
 
@@ -25,6 +25,7 @@ app.directive('click-outside', {
 })
 
 app.use(Mega3Ui)
+app.use(tailwindUI)
 Object.entries(icons).forEach(([componentName, component]) => {
   if (componentName !== 'default') {
     app.component(String(componentName), component)
