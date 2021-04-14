@@ -11,3 +11,7 @@ export {
     default as MPanel
 }
 from './MPanel.vue';
+export {
+    default as MButton
+}
+from './MButton.vue';
