@@ -26,14 +26,14 @@ export default /*#__PURE__*/ defineComponent({
   <button
     v-if="!small"
     type="button"
-    @click.stop="visibleTrue"
+    @click.stop="visible = !visible"
     v-click-outside="visibleFalse"
     class="inline-flex justify-center rounded-md border w-full border-gray-300 shadow-sm px-4 py-2 bg-green-light text-sm font-medium text-white hover:bg-green-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-light"
     id="options-menu"
     aria-expanded="true"
     aria-haspopup="true"
   >
-    {{ title }} 
+    <slot name="body"></slot>
     <!-- Heroicon name: solid/chevron-down -->
     <ChevronDownIcon class="h-5 w-5 text-white -mr-1 ml-2"/>
   </button>

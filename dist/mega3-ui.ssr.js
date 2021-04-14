@@ -156,14 +156,14 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", _hoisted_1$1, [!_ctx.small ? vue.withDirectives((vue.openBlock(), vue.createBlock("button", {
     key: 0,
     type: "button",
-    onClick: _cache[1] || (_cache[1] = vue.withModifiers(function () {
-      return _ctx.visibleTrue && _ctx.visibleTrue.apply(_ctx, arguments);
+    onClick: _cache[1] || (_cache[1] = vue.withModifiers(function ($event) {
+      return _ctx.visible = !_ctx.visible;
     }, ["stop"])),
     class: "inline-flex justify-center rounded-md border w-full border-gray-300 shadow-sm px-4 py-2 bg-green-light text-sm font-medium text-white hover:bg-green-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-light",
     id: "options-menu",
     "aria-expanded": "true",
     "aria-haspopup": "true"
-  }, [vue.createTextVNode(vue.toDisplayString(_ctx.title), 1), vue.createVNode(_component_ChevronDownIcon, {
+  }, [vue.renderSlot(_ctx.$slots, "body"), vue.createVNode(_component_ChevronDownIcon, {
     class: "h-5 w-5 text-white -mr-1 ml-2"
   })], 512)), [[_directive_click_outside, _ctx.visibleFalse]]) : vue.withDirectives((vue.openBlock(), vue.createBlock("button", {
     key: 1,

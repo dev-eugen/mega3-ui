@@ -1,4 +1,4 @@
-import { ref, defineComponent, resolveComponent, resolveDirective, openBlock, createBlock, withDirectives, withModifiers, createTextVNode, toDisplayString, createVNode, renderSlot, vShow, resolveDynamicComponent, createCommentVNode } from 'vue';
+import { ref, defineComponent, resolveComponent, resolveDirective, openBlock, createBlock, withDirectives, withModifiers, renderSlot, createVNode, vShow, resolveDynamicComponent, createCommentVNode } from 'vue';
 
 function useVisible() {
   const visible = ref(false);
@@ -58,12 +58,12 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("div", _hoisted_1$1, [!_ctx.small ? withDirectives((openBlock(), createBlock("button", {
     key: 0,
     type: "button",
-    onClick: _cache[1] || (_cache[1] = withModifiers((...args) => _ctx.visibleTrue && _ctx.visibleTrue(...args), ["stop"])),
+    onClick: _cache[1] || (_cache[1] = withModifiers($event => _ctx.visible = !_ctx.visible, ["stop"])),
     class: "inline-flex justify-center rounded-md border w-full border-gray-300 shadow-sm px-4 py-2 bg-green-light text-sm font-medium text-white hover:bg-green-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-light",
     id: "options-menu",
     "aria-expanded": "true",
     "aria-haspopup": "true"
-  }, [createTextVNode(toDisplayString(_ctx.title), 1), createVNode(_component_ChevronDownIcon, {
+  }, [renderSlot(_ctx.$slots, "body"), createVNode(_component_ChevronDownIcon, {
     class: "h-5 w-5 text-white -mr-1 ml-2"
   })], 512)), [[_directive_click_outside, _ctx.visibleFalse]]) : withDirectives((openBlock(), createBlock("button", {
     key: 1,
