@@ -1,4 +1,4 @@
-import { ref, defineComponent, resolveComponent, resolveDirective, openBlock, createBlock, withDirectives, withModifiers, renderSlot, createVNode, vShow, resolveDynamicComponent, createCommentVNode } from 'vue';
+import { ref, defineComponent, resolveComponent, resolveDirective, openBlock, createBlock, withDirectives, withModifiers, renderSlot, createVNode, vShow, Transition, withCtx, resolveDynamicComponent, createCommentVNode } from 'vue';
 
 function useVisible() {
   const visible = ref(false);
@@ -18,9 +18,9 @@ var script$1 = /*#__PURE__*/defineComponent({
   name: "MDropDown",
   // vue component name
   props: {
-    title: {
-      type: String,
-      default: ''
+    noIcon: {
+      type: Boolean,
+      default: false
     },
     small: {
       type: Boolean,
@@ -39,7 +39,7 @@ const _hoisted_1$1 = {
   class: "relative inline-block text-left"
 };
 const _hoisted_2 = {
-  class: "origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none",
+  class: "transition duration-200 transform origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none",
   role: "menu",
   "aria-orientation": "vertical",
   "aria-labelledby": "options-menu"
@@ -59,13 +59,13 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     key: 0,
     type: "button",
     onClick: _cache[1] || (_cache[1] = withModifiers($event => _ctx.visible = !_ctx.visible, ["stop"])),
-    class: "inline-flex justify-center rounded-md border w-full border-gray-300 shadow-sm px-4 py-2 bg-green-light text-sm font-medium text-white hover:bg-green-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-light",
+    class: "inline-flex justify-center items-center rounded-md border w-full border-gray-300 shadow-sm px-4 py-2 bg-green-light text-sm font-medium text-white hover:bg-green-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-green-light",
     id: "options-menu",
     "aria-expanded": "true",
     "aria-haspopup": "true"
-  }, [renderSlot(_ctx.$slots, "body"), createVNode(_component_ChevronDownIcon, {
+  }, [renderSlot(_ctx.$slots, "body"), withDirectives(createVNode(_component_ChevronDownIcon, {
     class: "h-5 w-5 text-white -mr-1 ml-2"
-  })], 512)), [[_directive_click_outside, _ctx.visibleFalse]]) : withDirectives((openBlock(), createBlock("button", {
+  }, null, 512), [[vShow, !_ctx.noIcon]])], 512)), [[_directive_click_outside, _ctx.visibleFalse]]) : withDirectives((openBlock(), createBlock("button", {
     key: 1,
     onClick: _cache[2] || (_cache[2] = (...args) => _ctx.visibleTrue && _ctx.visibleTrue(...args)),
     type: "button",
@@ -75,7 +75,13 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-haspopup": "true"
   }, [createVNode(_component_dots_vertical_icon, {
     class: "h-5 w-5"
-  })], 512)), [[_directive_click_outside, _ctx.visibleFalse]]), withDirectives(createVNode("div", _hoisted_2, [createVNode("div", _hoisted_3, [renderSlot(_ctx.$slots, "default")])], 512), [[vShow, _ctx.visible]])]);
+  })], 512)), [[_directive_click_outside, _ctx.visibleFalse]]), createVNode(Transition, {
+    "enter-active-class": "opacity-0 scale-50",
+    "leave-active-class": "opacity-0 scale-50"
+  }, {
+    default: withCtx(() => [withDirectives(createVNode("div", _hoisted_2, [createVNode("div", _hoisted_3, [renderSlot(_ctx.$slots, "default")])], 512), [[vShow, _ctx.visible]])]),
+    _: 3
+  })]);
 }
 
 script$1.render = render$1;
