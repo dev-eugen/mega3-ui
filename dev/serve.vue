@@ -17,10 +17,12 @@ export default defineComponent({
     const surname = ref("surname");
     const open = ref(false);
     const visible = ref(false);
+    const barge_visible = ref(true);
     return {
       name,
       visible,
       surname,
+      barge_visible,
       open,
     };
   },
@@ -132,14 +134,8 @@ export default defineComponent({
 
     <m-panel class="mb-5 h-72 w-full">
       <template #head>
-
-        <m-drop-down noIcon>
-          <template #body>
-            <img
-              class="h-7 w-7 rounded-full"
-/>
-        
-      </template>
+        Dropdowns
+        </template>
       <template #body>
         <m-drop-down noIcon class="pl-32">
           <template #body class="flex justify-between">
@@ -186,7 +182,7 @@ export default defineComponent({
 
 
     <div class="flex">
-      <m-badges @click="visible = false " @close="visible = false"> </m-badges>
+      <m-badges v-show="barge_visible" @delete="barge_visible = false"> </m-badges>
     </div>
 
     <m-panel class="mb-5">
