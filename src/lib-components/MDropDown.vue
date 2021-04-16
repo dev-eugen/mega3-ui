@@ -46,7 +46,7 @@
     </button>
     <transition enter-active-class="opacity-0 scale-50" leave-active-class="opacity-0 scale-50">
       <div v-show="visible"
-        class="z-50 transition duration-200 transform origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="transition duration-200 transform origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
         role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
         <div class="py-1" role="none">
           <slot></slot>
