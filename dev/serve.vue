@@ -18,12 +18,14 @@ export default defineComponent({
     const open = ref(false);
     const visible = ref(false);
     const barge_visible = ref(true);
+    const icon_visible = ref(true)
     return {
       name,
       visible,
       surname,
       barge_visible,
       open,
+      icon_visible
     };
   },
 });
@@ -182,10 +184,15 @@ export default defineComponent({
 
 
     <div class="flex">
-      <m-badges v-show="barge_visible" @delete="barge_visible = false"> </m-badges>
+      <span>
+      <m-badges v-show="barge_visible" @delete="barge_visible = false " > </m-badges>
+      </span>
+      <m-badges v-show="barge_visible" @delete="barge_visible = false" color="yellow" text="fill"> </m-badges>
+      <m-badges v-show="barge_visible" @delete="barge_visible = false" color="blue"> </m-badges>
+      <m-badges v-show="barge_visible" @delete="barge_visible = false" color="red"> </m-badges>
     </div>
 
-    <m-panel class="mb-5">
+    <m-panel class="mb-5 mt-4">
       <template #head>
         Inputs
       </template>
