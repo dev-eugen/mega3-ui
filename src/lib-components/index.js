@@ -8,3 +8,5 @@ export { default as MInput } from "./MInput.vue";
 export { default as MModal } from "./MModal.vue";
 export { default as MModalConfim } from "./MModalConfim.vue";
 export { default as MAvatar } from "./MAvatar.vue";
+export { default as MButtonGroup } from "./MButtonGroup.vue";
+export { default as MBadges } from "./MBadges.vue";

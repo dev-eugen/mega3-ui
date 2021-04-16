@@ -5,7 +5,7 @@ export default {
   props: {
     color: {
       type: String,
-      default: 'indigo',
+      default: "indigo",
     },
     rounded: {
       type: Boolean,
@@ -18,6 +18,11 @@ export default {
     status: {
       type: String,
       default: "md",
+    },
+    img: {
+      type: String,
+      default:
+        "https://images.unsplash.com/photo-1601592935678-406968278b1e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     },
   },
   setup(props) {
@@ -55,7 +60,7 @@ export default {
     <span class="inline-block relative m-1">
       <img
         :class="`h-${sz} w-${sz}  rounded-${round}`"
-        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+        :src="`${img}`"
         alt=""
       />
       <span
