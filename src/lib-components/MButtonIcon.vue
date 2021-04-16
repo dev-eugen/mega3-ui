@@ -1,7 +1,7 @@
 <template>
-    <button type="button"
-        :class='`inline-flex items-center p-${sz} border border-transparent rounded-full shadow-sm text-white bg-green-light hover:bg-green-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-light`'>
-      <component class="h-6 w-6" :is="icon" v-if="icon"></component>
+    <button type="button" 
+        :class='` m-1 flex justify-center items-center w-${h} h-${h} border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-${color}-600 hover:bg-${color}-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${color}-500`'>
+      <component :class="`h-${size} w-${size}`" :is="icon" v-if="icon"></component>
     </button>
 </template>
 
@@ -15,11 +15,11 @@
         props: {
             color: {
                 type: String,
-                default: "primary",
+                default: "indigo",
             },
             icon: {
                 type: String,
-                require: true
+                default: null
             },
             size: {
                 type: String,
@@ -27,18 +27,15 @@
             }
         },
         setup(props) {
-            const round = computed(() => {
-                return props.rounded ? 'full' : 'md'
+
+            const size = computed(() => {
+                return props.size === 'lg' ? 6 : props.size === 'md' ? 4 : 3
             })
 
-            const sz = computed(() => {
-                return props.size === 'lg' ? 4 : props.size === 'md' ? 3 : 2
+            const h = computed(() => {
+                return props.size === 'lg' ? 14 : props.size === 'md' ? 12 : 10
             })
-
-            return {
-                round,
-                sz
-            }
+            return { h }
         }
     }
 </script>

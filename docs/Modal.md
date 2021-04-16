@@ -3,9 +3,11 @@
 
 ## Expmle 
 
-```<m-modal-confim color="pink" :open="open" @accept="open = true" @close="open = false" ok-title="Accept" icon="HomeIcon" >
-      sdfsdfsfdsdfsfsdf
-    </m-modal-confim>```
+```
+<m-modal-confim color="pink" :open="open" @accept="open = true" @close="open = false" ok-title="Accept" icon="HomeIcon" >
+      This block is in slot
+    </m-modal-confim>
+    ```
 
 ## props
 

@@ -1,7 +1,7 @@
 <template>
     <button type="button" 
-        :class='`inline-flex items-center px-${sz*2} py-${sz} border border-transparent text-base font-medium rounded-${round} shadow-sm text-white bg-green-light hover:bg-green-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-light`'>
-      <component class="-ml-0.5 mr-2 h-4 w-4" :is="icon" v-if="icon"></component>
+        :class='` m-1 flex justify-center items-center px-${px} h-${h} border border-transparent font-medium rounded-${round} shadow-sm text-white bg-${color}-600 hover:bg-${color}-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${color}-500`'>
+      <component class="h-4 w-4 mr-2 -ml-1.5" :is="icon" v-if="icon"></component>
         <slot></slot>
     </button>
 </template>
@@ -16,17 +16,13 @@
         props: {
             color: {
                 type: String,
-                default: "primary",
+                default: "indigo",
             },
             icon: {
                 type: String,
                 default: null
             },
             rounded: {
-                type: Boolean,
-                default: false
-            },
-            noHead: {
                 type: Boolean,
                 default: false
             },
@@ -40,11 +36,19 @@
                 return props.rounded ? 'full' : 'md'
             })
 
-            const sz = computed(() => {
-                return props.size === 'lg' ? 3 : props.size === 'md' ? 2 : 1 
+            const font = computed(() => {
+                return props.size === 'lg' ? '3xl' : props.size === 'md' ? 'lg' : 'sm'
             })
 
-            return { round,sz }
+            const h = computed(() => {
+                return props.size === 'lg' ? 11 : props.size === 'md' ? 10 : 8
+            })
+
+            const px = computed(() => {
+                return props.size === 'lg' ? 8 : props.size === 'md' ? 6 : 3
+            })
+
+            return { round, px, h, font }
         }
     }
 </script>

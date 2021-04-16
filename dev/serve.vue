@@ -1,33 +1,91 @@
 <script>
   import {
-    defineComponent, ref
+    defineComponent,
+    ref
   } from "vue";
-import MModalConfim from "../src/lib-components/MModalConfim.vue"
+import MModalConfim from "../src/lib-components/MModalConfim.vue";
   export default defineComponent({
   components: { MModalConfim },
     name: "ServeDev",
     setup(props) {
       const name = ref("name")
       const surname = ref("surname")
-      const open = ref(true)
-      return{ name, surname, open }
+      const open = ref(false)
+      const visible = ref(false)
+      return {
+        name,
+        visible,
+        surname,
+        open
+      }
     }
   });
 </script>
 
 <template>
-  <div id="app" class="p-3 flex justify-center bg-gray-200 w-full">
-    <m-modal-confim color="pink" :open="open" @accept="open = true" @close="open = false" ok-title="Accept" icon="HomeIcon" title="Title" text="Asdajd adjaodj aodad auidjaoid iojdoaidjaoid aijdaoisdjovxcvxcvxv xvxcv xvx v xv xv x v xv xv x vx v xv">
-      sdfsdfsfdsdfsfsdf
-    </m-modal-confim>
+  <div id="app" class="p-3 flex justify-center flex-col items-center w-full">
+    <m-panel class="mb-5 w-min">
+      <template #head>
+        Buttons
+      </template>
+      <template #body>
+        <m-button size="sm" color="green">Button</m-button>
+        <m-button size="md" color="blue">Button</m-button> 
+        <m-button size="md" rounded color="blue">Button</m-button> 
+        <m-button size="lg" color="red">Button</m-button>
+        <m-button size="sm" icon="MailIcon" color="indigo">Button</m-button>
+        <m-button size="md" icon="MailIcon" color="indigo">Button</m-button>
+        <m-button size="lg" icon="MailIcon" color="indigo">Button</m-button>
+      </template>
+    </m-panel>
+
+    <m-panel class="mb-5">
+      <template #head>
+        Icon butons
+      </template>
+      <template #body>
+        <m-button-icon icon="PlusIcon"  size="sm" color="indigo">button</m-button-icon>
+        <m-button-icon icon="PlusIcon"  size="md" color="indigo">button</m-button-icon>
+        <m-button-icon icon="PlusIcon"  size="lg" color="indigo">button</m-button-icon>
+      </template>
+    </m-panel>
+
+    <m-panel class="mb-5">
+      <template #head>
+        Modals
+      </template>
+      <template #body>
+        <m-button @click="visible = true" size="md" color="indigo">Simple</m-button> 
+        <m-modal color="red" :open="visible" @accept="visible = false" @close="visible = false" ok-title="GO" cancel-title="No, back">
+          This block is in slot
+        </m-modal>
+        <m-button size="md" @click="open = true" color="red">Confim</m-button> 
+        <m-modal-confim color="red" :open="open" @accept="open = false" @close="open = false" ok-title="Accept" icon="ShieldExclamationIcon" title="Title" text="Lorem inpus of this text you would like this and many more about if you want to cinfim pres Accept if no press Cancel"> </m-modal-confim>
+      </template>
+    </m-panel>
+
+    <m-panel class="mb-5">
+      <template #head>
+        Avatars
+      </template>
+      <template #body>
+        <m-avatar color="green" name="asd asd" size="lg" status="lg"></m-avatar>
+        <m-avatar color="green" name="asd asd" size="md" status="md"></m-avatar>
+        <m-avatar color="green" name="asd asd" size="sm" status="sm"></m-avatar>
+        <m-avatar color="red" name="asd asd" size="lg" status="lg"></m-avatar>
+        <m-avatar color="red" name="asd asd" size="md" status="md"></m-avatar>
+        <m-avatar color="red" name="asd asd" size="sm" status="sm"></m-avatar>
+        <m-avatar color="gray" name="asd asd" size="lg" status="lg"></m-avatar>
+        <m-avatar color="gray" name="asd asd" size="md" status="md"></m-avatar>
+        <m-avatar color="gray" name="asd asd" size="sm" status="sm"></m-avatar>
+        <m-avatar color="red" name="asd asd" size="lg" status="lg" rounded></m-avatar>
+        <m-avatar color="green" name="asd asd" size="md" status="md " rounded></m-avatar>
+        <m-avatar color="gray" name="asd asd" size="sm" status="sm" rounded></m-avatar>
+      </template>
+    </m-panel>
+
+    
+
+  
   </div>
-
-  <div>
-<div id="app" class="p-3 flex justify-center bg-gray-200 w-full">
-
-<!-- <m-input label="Email" placeholder="example@gmail.com" id="name" type="number"></m-input> -->
-</div>
-
-
-</div>
 </template>
