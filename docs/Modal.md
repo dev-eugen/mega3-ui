@@ -1,6 +1,11 @@
 # MModal
 
-<m-modal></m-modal>
+
+## Expmle 
+
+```<m-modal-confim color="pink" :open="open" @accept="open = true" @close="open = false" ok-title="Accept" icon="HomeIcon" >
+      sdfsdfsfdsdfsfsdf
+    </m-modal-confim>```
 
 ## props
 
