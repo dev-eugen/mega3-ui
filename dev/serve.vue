@@ -2,20 +2,26 @@
   import {
     defineComponent, ref
   } from "vue";
+  import test from '../src/lib-components/test'
   export default defineComponent({
     name: "ServeDev",
-    // components: {
-    //  Mega3UiSample,
-    // }
+    components: {
+     test
+    },
     setup(props) {
-      const x =ref("wrwr")
-      return{ x }
+      //const test = (v) => console.log(v)
+      const name = ref("name")
+      const surname = ref("surname")
+      const open = ref(true)
+      return{ name, surname, open }
     }
   });
 </script>
 
 <template>
   <div id="app" class="p-3 flex justify-center bg-gray-200 w-full">
-    <m-input :label="x" placeholder="example@com" id="name" type="number" error="Only namber" v-model="x"></m-input>
+    <m-modal color="indigo" :open="open" @accept="open = true" @close="open = false" ok-title="Accept" icon="HomeIcon" title="Title" text="Asdajd adjaodj aodad auidjaoid iojdoaidjaoid aijdaoisdjovxcvxcvxv xvxcv xvx v xv xv x v xv xv x vx v xv">
+      sdfsdfsfdsdfsfsdf
+    </m-modal>
   </div>
 </template>

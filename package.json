@@ -7,9 +7,7 @@
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
   "main": "dist/mega3-ui.ssr.js",
   "module": "dist/mega3-ui.esm.js",
@@ -37,10 +35,6 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@rollup/plugin-replace": "^2.3.4",
-    "@storybook/addon-actions": "^6.3.0-alpha.6",
-    "@storybook/addon-essentials": "^6.3.0-alpha.6",
-    "@storybook/addon-links": "^6.3.0-alpha.6",
-    "@storybook/vue3": "^6.3.0-alpha.6",
     "@vue/cli-plugin-babel": "^4.5.10",
     "@vue/cli-service": "^4.5.10",
     "@vue/compiler-sfc": "^3.0.5",
