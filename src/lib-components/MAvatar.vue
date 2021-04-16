@@ -4,8 +4,8 @@ import { defineProps, computed } from "vue";
 export default {
   props: {
     color: {
-      type: Boolean,
-      default: false,
+      type: String,
+      default: 'indigo',
     },
     rounded: {
       type: Boolean,
