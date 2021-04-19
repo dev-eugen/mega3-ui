@@ -259,10 +259,10 @@ var script$8 = {
       return props.size === 'lg' ? '3xl' : props.size === 'md' ? 'lg' : 'sm';
     });
     var h = vue.computed(function () {
-      return props.size === 'lg' ? 10 : props.size === 'md' ? 8 : 6;
+      return props.size === 'lg' ? 10 : props.size === 'md' ? 9 : 7;
     });
     var px = vue.computed(function () {
-      return props.size === 'lg' ? 7 : props.size === 'md' ? 5 : 2;
+      return props.size === 'lg' ? 7 : props.size === 'md' ? 5 : 3;
     });
     return {
       round: round,
@@ -274,7 +274,7 @@ var script$8 = {
 };function render$7(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("button", {
     type: "button",
-    class: " flex justify-center items-center px-".concat($setup.px, " h-").concat($setup.h, " border border-transparent font-medium rounded-").concat($setup.round, " shadow-sm text-white bg-").concat($props.color, "-600 hover:bg-").concat($props.color, "-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-").concat($props.color, "-500")
+    class: "flex justify-center items-center px-".concat($setup.px, " h-").concat($setup.h, " border border-transparent font-medium rounded-").concat($setup.round, " shadow-sm text-white bg-").concat($props.color, "-600 hover:bg-").concat($props.color, "-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-").concat($props.color, "-500")
   }, [$props.icon ? (vue.openBlock(), vue.createBlock(vue.resolveDynamicComponent($props.icon), {
     key: 0,
     class: "h-4 w-4 mr-2 -ml-1.5"
@@ -299,7 +299,7 @@ var script$8 = {
       return props.size === 'lg' ? 6 : props.size === 'md' ? 4 : 3;
     });
     var h = vue.computed(function () {
-      return props.size === 'lg' ? 14 : props.size === 'md' ? 12 : 10;
+      return props.size === 'lg' ? 12 : props.size === 'md' ? 10 : 8;
     });
     return {
       h: h
@@ -792,19 +792,48 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     color: {
       type: String,
       default: "indigo"
+    },
+    round: {
+      type: String,
+      default: 'full'
+    },
+    pdngx: {
+      type: String,
+      default: '2'
+    },
+    pdngy: {
+      type: String,
+      default: '0.5'
+    },
+    txtsz: {
+      type: String,
+      default: 'sm'
+    },
+    shower: {
+      type: String,
+      default: 'false'
     }
   }
-};var _hoisted_1 = /*#__PURE__*/vue.createTextVNode(" Small ");
+};var _hoisted_1 = /*#__PURE__*/vue.createVNode("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  class: "h-3 w-3",
+  viewBox: "0 0 20 20",
+  fill: "currentColor"
+}, [/*#__PURE__*/vue.createVNode("path", {
+  fillRule: "evenodd",
+  d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
+  clipRule: "evenodd"
+})], -1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("span", {
-    class: "inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-".concat($props.color, "-100 text-indigo-800")
+    class: "inline-flex items-center px-".concat($props.pdngx, " py-").concat($props.pdngy, " rounded-").concat($props.round, " text-").concat($props.txtsz, " font-medium bg-").concat($props.color, "-200 text-indigo-800")
   }, [vue.createVNode("button", {
-    class: "h-1 w-2 bg-black rounded-full mr-1 ",
+    class: "bg-".concat($props.color, "-200 rounded-full mr-1 "),
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return _ctx.$emit('delete');
     })
-  }, " close "), _hoisted_1], 2);
+  }, [_hoisted_1], 2), vue.renderSlot(_ctx.$slots, "default")], 2);
 }script.render = render;/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,MDropDown: script$a,MDropDownItem: script$9,MPanel: script$8,MButton: script$7,MButtonIcon: script$6,MInput: script$5,MModal: script$4,MModalConfim: script$3,MAvatar: script$2,MButtonGroup: script$1,MBadges: script});var install = function installMega3Ui(app) {
   Object.entries(components$1).forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),

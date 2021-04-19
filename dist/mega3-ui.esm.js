@@ -170,10 +170,10 @@ var script$7 = {
       return props.size === 'lg' ? '3xl' : props.size === 'md' ? 'lg' : 'sm';
     });
     const h = computed$1(() => {
-      return props.size === 'lg' ? 10 : props.size === 'md' ? 8 : 6;
+      return props.size === 'lg' ? 10 : props.size === 'md' ? 9 : 7;
     });
     const px = computed$1(() => {
-      return props.size === 'lg' ? 7 : props.size === 'md' ? 5 : 2;
+      return props.size === 'lg' ? 7 : props.size === 'md' ? 5 : 3;
     });
     return {
       round,
@@ -188,7 +188,7 @@ var script$7 = {
 function render$7(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("button", {
     type: "button",
-    class: ` flex justify-center items-center px-${$setup.px} h-${$setup.h} border border-transparent font-medium rounded-${$setup.round} shadow-sm text-white bg-${$props.color}-600 hover:bg-${$props.color}-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${$props.color}-500`
+    class: `flex justify-center items-center px-${$setup.px} h-${$setup.h} border border-transparent font-medium rounded-${$setup.round} shadow-sm text-white bg-${$props.color}-600 hover:bg-${$props.color}-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${$props.color}-500`
   }, [$props.icon ? (openBlock(), createBlock(resolveDynamicComponent($props.icon), {
     key: 0,
     class: "h-4 w-4 mr-2 -ml-1.5"
@@ -218,7 +218,7 @@ var script$6 = {
       return props.size === 'lg' ? 6 : props.size === 'md' ? 4 : 3;
     });
     const h = computed$1(() => {
-      return props.size === 'lg' ? 14 : props.size === 'md' ? 12 : 10;
+      return props.size === 'lg' ? 12 : props.size === 'md' ? 10 : 8;
     });
     return {
       h
@@ -727,19 +727,48 @@ var script = {
     color: {
       type: String,
       default: "indigo"
+    },
+    round: {
+      type: String,
+      default: 'full'
+    },
+    pdngx: {
+      type: String,
+      default: '2'
+    },
+    pdngy: {
+      type: String,
+      default: '0.5'
+    },
+    txtsz: {
+      type: String,
+      default: 'sm'
+    },
+    shower: {
+      type: String,
+      default: 'false'
     }
   }
 };
 
-const _hoisted_1 = /*#__PURE__*/createTextVNode(" Small ");
+const _hoisted_1 = /*#__PURE__*/createVNode("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  class: "h-3 w-3",
+  viewBox: "0 0 20 20",
+  fill: "currentColor"
+}, [/*#__PURE__*/createVNode("path", {
+  fillRule: "evenodd",
+  d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
+  clipRule: "evenodd"
+})], -1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("span", {
-    class: `inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-${$props.color}-100 text-indigo-800`
+    class: `inline-flex items-center px-${$props.pdngx} py-${$props.pdngy} rounded-${$props.round} text-${$props.txtsz} font-medium bg-${$props.color}-200 text-indigo-800`
   }, [createVNode("button", {
-    class: "h-1 w-2 bg-black rounded-full mr-1 ",
+    class: `bg-${$props.color}-200 rounded-full mr-1 `,
     onClick: _cache[1] || (_cache[1] = $event => _ctx.$emit('delete'))
-  }, " close "), _hoisted_1], 2);
+  }, [_hoisted_1], 2), renderSlot(_ctx.$slots, "default")], 2);
 }
 
 script.render = render;

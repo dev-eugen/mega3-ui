@@ -1,6 +1,6 @@
 <template>
     <button type="button" 
-        :class='` m-1 flex justify-center items-center px-${px} h-${h} border border-transparent font-medium rounded-${round} shadow-sm text-white bg-${color}-600 hover:bg-${color}-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${color}-500`'>
+        :class='`flex justify-center items-center px-${px} h-${h} border border-transparent font-medium rounded-${round} shadow-sm text-white bg-${color}-600 hover:bg-${color}-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${color}-500`'>
       <component class="h-4 w-4 mr-2 -ml-1.5" :is="icon" v-if="icon"></component>
         <slot></slot>
     </button>
