@@ -41,7 +41,7 @@
                 return props.size === 'lg' ? 10 : props.size === 'md' ? 9 : 7
             })
             const px = computed(() => {
-                return props.size === 'lg' ? 8 : props.size === 'md' ? 6 : 3
+                return props.size === 'lg' ? 7 : props.size === 'md' ? 5 : 3
             })
             return { round, px, h, font }
         }

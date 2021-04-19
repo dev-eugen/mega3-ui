@@ -19,9 +19,11 @@ export default defineComponent({
     const visible = ref(false);
     const barge_visible = ref(true);
     const icon_visible = ref(true)
+    const text = ref("Inputs")
     return {
       name,
       visible,
+      text,
       surname,
       barge_visible,
       open,
@@ -184,20 +186,15 @@ export default defineComponent({
 
 
     <div class="flex">
-      <span>
-      <m-badges v-show="barge_visible" @delete="barge_visible = false " > </m-badges>
-      </span>
-      <m-badges v-show="barge_visible" @delete="barge_visible = false" color="yellow" text="fill"> </m-badges>
-      <m-badges v-show="barge_visible" @delete="barge_visible = false" color="blue"> </m-badges>
-      <m-badges v-show="barge_visible" @delete="barge_visible = false" color="red"> </m-badges>
+      <m-badges v-show="barge_visible" @delete="barge_visible = false"  >Text</m-badges>
     </div>
 
     <m-panel class="mb-5 mt-4">
       <template #head>
-        Inputs
+        {{ text }}
       </template>
       <template #body>
-        
+        <m-input label="Label" v-model="text" error="Error on ocured"></m-input>
       </template>
     </m-panel>
   </div>
