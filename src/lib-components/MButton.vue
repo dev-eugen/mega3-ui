@@ -11,7 +11,6 @@
         defineProps,
         computed
     } from "vue";
-
     export default {
         props: {
             color: {
@@ -35,19 +34,15 @@
             const round = computed(() => {
                 return props.rounded ? 'full' : 'md'
             })
-
             const font = computed(() => {
                 return props.size === 'lg' ? '3xl' : props.size === 'md' ? 'lg' : 'sm'
             })
-
             const h = computed(() => {
-                return props.size === 'lg' ? 11 : props.size === 'md' ? 10 : 8
+                return props.size === 'lg' ? 10 : props.size === 'md' ? 9 : 7
             })
-
             const px = computed(() => {
                 return props.size === 'lg' ? 8 : props.size === 'md' ? 6 : 3
             })
-
             return { round, px, h, font }
         }
     }

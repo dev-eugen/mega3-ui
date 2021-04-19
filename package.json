@@ -1,6 +1,6 @@
 {
   "name": "mega3ui",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "mega3-ui package",
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",

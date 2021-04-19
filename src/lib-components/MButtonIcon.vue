@@ -33,7 +33,7 @@
             })
 
             const h = computed(() => {
-                return props.size === 'lg' ? 14 : props.size === 'md' ? 12 : 10
+                return props.size === 'lg' ? 12 : props.size === 'md' ? 10 : 8
             })
             return { h }
         }
